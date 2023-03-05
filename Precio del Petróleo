@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data_petroleo=pd.read_csv("DatosOil.csv") #Importa el archivo csv 
+fig2,ax=plt.subplots() #Crea la gráfica
+ax.plot(data_petroleo['Fecha'],data_petroleo['Último'],marker='^',color='tab:red') #Crea la tendencia de valor último
+ax.plot(data_petroleo['Fecha'],data_petroleo['Máximo'],marker='o',color='tab:green') #Crea la tendencia del valor máximo
+ax.plot(data_petroleo['Fecha'],data_petroleo['Mínimo'],marker='*',color='tab:blue') #Crea la tendencia del valor mínimo
+plt.title('Datos históricos del Petróleo',fontsize=20,color='y') #Genera el título a la gráfica
+plt.xlabel('Fecha',color='b') #Da color a subtítulo en x
+plt.ylabel('Precio',color='g') #Da color a subtítulo en y
+plt.legend(['Último','Máximo','Mínimo']) #Crea la leyenda de las tendencias
+plt.show
